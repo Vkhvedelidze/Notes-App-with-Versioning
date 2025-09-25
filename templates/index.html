@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App with Versioning</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-sticky-note"></i> Notes App with Versioning</h1>
+            <p>Create, manage, and version your notes with ease</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Notes List Section -->
+            <div class="notes-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-list"></i> Your Notes</h2>
+                    <button id="newNoteBtn" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> New Note
+                    </button>
+                </div>
+                <div id="notesList" class="notes-list">
+                    <!-- Notes will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Note Editor Section -->
+            <div class="editor-section">
+                <div id="editorContainer" class="editor-container" style="display: none;">
+                    <div class="editor-header">
+                        <h3 id="editorTitle">Edit Note</h3>
+                        <div class="editor-actions">
+                            <button id="saveBtn" class="btn btn-success">
+                                <i class="fas fa-save"></i> Save
+                            </button>
+                            <button id="cancelBtn" class="btn btn-secondary">
+                                <i class="fas fa-times"></i> Cancel
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="noteTitle">Title:</label>
+                        <input type="text" id="noteTitle" placeholder="Enter note title...">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="noteContent">Content:</label>
+                        <textarea id="noteContent" placeholder="Enter your note content..."></textarea>
+                    </div>
+
+                    <!-- Version History Section -->
+                    <div id="versionHistory" class="version-history" style="display: none;">
+                        <h4><i class="fas fa-history"></i> Version History</h4>
+                        <div id="versionsList" class="versions-list">
+                            <!-- Versions will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div id="welcomeMessage" class="welcome-message">
+                    <i class="fas fa-sticky-note fa-3x"></i>
+                    <h3>Welcome to Notes App</h3>
+                    <p>Create a new note or select an existing one to get started.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Confirm Action</h3>
+            <p id="confirmMessage"></p>
+            <div class="modal-actions">
+                <button id="confirmYes" class="btn btn-danger">Yes</button>
+                <button id="confirmNo" class="btn btn-secondary">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
