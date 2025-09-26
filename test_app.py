@@ -1,9 +1,3 @@
-#!/usr/bin/env python3
-"""
-Basic test suite for the Notes App with Versioning
-This provides simple tests to verify core functionality
-"""
-
 import json
 import os
 import tempfile
